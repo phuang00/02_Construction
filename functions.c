@@ -15,23 +15,17 @@ struct item example(){
     *(s + i) = *(items + (5 * choice) + i);
   }
   *(s + 5) = '\0';
-  struct item *p;
-  (*p).i = s;
-  (*p).p = *(prices + choice);
-  return *p;
+  struct item ans;
+  strcpy(ans.i, s);
+  ans.p = *(prices + choice);
+  return ans;
 }
 
 void printStrut(struct item thing){
-  char str[sizeof(thing.i)];
-  int c = 0;
-  while (*(thing.i + c) != '\0'){
-    *(str + c) = *(thing.i + c);
-    c++;
-  }
-  printf("Item: %s\nPrice: %d\n", str, thing.p);
+  printf("Item: %s\nPrice: %d\n", thing.i, thing.p);
 }
 
-void modify(struct item thing, char *str, int price){
-  thing.i = str;
-  thing.p = price;
+void modify(struct item *thing, char *str, int price){
+  strcpy(thing->i, str);
+  thing->p = price;
 }

@@ -6,6 +6,8 @@
 int main(){
   struct item thing = example();
   printStrut(thing);
+  char *stuff = "bagel";
+  modify(&thing, stuff, 30);
   printStrut(thing);
   return 0;
 }
