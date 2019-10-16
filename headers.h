@@ -3,7 +3,7 @@
 #include <string.h>
 #include <time.h>
 
-struct item {char i[10]; int p;};
+struct item {char *i; int p;};
 
 struct item example();
 void printStrut(struct item thing);

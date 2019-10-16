@@ -12,6 +12,7 @@ struct item example(){
   }
   *(s + 5) = '\0';
   struct item ans;
+  ans.i = malloc(sizeof(s));
   strcpy(ans.i, s);
   ans.p = *(prices + choice);
   return ans;
@@ -22,6 +23,7 @@ void printStrut(struct item thing){
 }
 
 void modify(struct item *thing, char *str, int price){
+  thing->i = malloc(sizeof(str));
   strcpy(thing->i, str);
   thing->p = price;
 }
